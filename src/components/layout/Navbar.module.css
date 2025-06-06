@@ -1,0 +1,30 @@
+/* src/components/layout/Navbar.module.css */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-accent2);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.brand {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--color-primary);
+}
+.brand:hover { text-decoration: none; }
+.navLinks a {
+  margin-left: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  transition: color 0.3s ease;
+}
+.navLinks a:hover {
+  color: var(--color-accent1);
+  text-decoration: none;
+}

@@ -1,0 +1,21 @@
+/* src/components/ui/InfoCard.module.css */
+.card {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-accent2);
+  padding-bottom: 0.5rem;
+  color: var(--color-accent1);
+}
+
+.content {
+  line-height: 1.7;
+}

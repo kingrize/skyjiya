@@ -1,0 +1,65 @@
+/* src/app/Homepage.module.css */
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.profileHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.profileHeader h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+
+.playstyle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Kolom kiri 2x lebih besar dari kolom kanan */
+  gap: 2rem;
+}
+
+.statsList, .outfitList {
+  list-style: none;
+  padding: 0;
+}
+
+.statsList li, .outfitList li {
+  margin-bottom: 0.5rem;
+}
+
+.outfitList li span {
+  font-weight: bold;
+  text-transform: capitalize;
+  color: var(--color-accent1);
+}
+
+.friendCodeText {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.qrCodeContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Penyesuaian untuk layar kecil (Mobile) */
+@media (max-width: 768px) {
+  .mainGrid {
+    grid-template-columns: 1fr; /* Ubah menjadi 1 kolom */
+  }
+}
