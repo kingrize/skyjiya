@@ -1,8 +1,0 @@
-.toggleButton {
-  display: none;
-  position: fixed; top: 1rem; left: 1rem; z-index: 1001;
-  background: var(--color-panel-bg);
-  border: 1px solid var(--color-panel-border);
-  border-radius: 8px; padding: 0.5rem; color: var(--color-text); cursor: pointer;
-}
-@media (max-width: 900px) { .toggleButton { display: block; } }
