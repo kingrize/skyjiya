@@ -2,18 +2,21 @@
 .card {
   margin-bottom: 2.5rem;
   padding: 1.5rem 2rem;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  /* Efek Kaca Buram (Glassmorphism) */
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(131, 138, 157, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 .card h3 {
   margin-top: 0;
   margin-bottom: 1rem;
-  border-bottom: 1px solid var(--color-accent2);
-  padding-bottom: 0.5rem;
-  color: var(--color-accent1);
+  border-bottom: 1px solid rgba(173, 216, 230, 0.7);
+  padding-bottom: 0.75rem;
+  color: #0c4a6e; /* Warna biru tua untuk judul kartu */
+  font-weight: 700;
 }
 
 .content {

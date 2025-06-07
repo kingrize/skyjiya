@@ -1,11 +1,55 @@
-/* src/app/globals.css */
+/* src/app/globals.css (Versi dengan Urutan yang Benar) */
 
-/* Letakkan ini di paling bawah */
+/* 1. Impor Font HARUS di paling atas */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Nunito:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* 2. Reset Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 3. Variabel Global (Warna & Font) */
+:root {
+  --font-primary: 'Nunito', sans-serif;
+  --font-heading: 'Cinzel', serif;
+  --color-primary: #FFD700;    /* Emas */
+  --color-accent1: #FFA07A;     /* Oranye lembut */
+  --color-accent2: #ADD8E6;     /* Biru langit lembut */
+}
+
+/* 4. Style Dasar untuk Body dan elemen lainnya */
+body {
+  font-family: var(--font-primary);
+  background: linear-gradient(180deg, #d3e0ff 0%, #fce1e4 100%);
+  color: #3f3f46;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+a {
+  color: #0c4a6e;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 5. Style untuk Partikel Latar Belakang */
 #tsparticles {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Ini adalah kunci untuk meletakkannya di belakang semua konten lain */
+  z-index: -1;
 }

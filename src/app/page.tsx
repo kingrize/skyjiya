@@ -1,8 +1,8 @@
 // src/app/page.tsx
 import Image from 'next/image';
-import { profileData } from '@/lib/data'; // Mengambil data dari lib/data.ts
-import InfoCard from '@/components/ui/InfoCard'; // Menggunakan komponen kartu
-import styles from './Homepage.module.css'; // Menggunakan style khusus homepage
+import { profileData } from '@/lib/data';
+import InfoCard from '@/components/ui/InfoCard';
+import styles from './Homepage.module.css';
 
 export default function HomePage() {
   return (
@@ -13,6 +13,7 @@ export default function HomePage() {
       </header>
 
       <div className={styles.mainGrid}>
+        {/* --- KIRI --- */}
         <div className={styles.leftColumn}>
           <InfoCard title="About Me in Sky">
             <p>{profileData.bio}</p>
@@ -20,25 +21,44 @@ export default function HomePage() {
 
           <InfoCard title="Game Stats">
             <ul className={styles.statsList}>
-              <li>✨ Winged Light: <strong>{profileData.wingedLight}</strong></li>
-              <li>🔥 Ascended Candles: <strong>{profileData.ascendedCandles}</strong></li>
+              <li className={styles.statItem}>
+                <Image 
+                  src="/images/icons/icon-wl.png" 
+                  alt="Winged Light icon" 
+                  width={24} 
+                  height={24} 
+                />
+                <span>Winged Light: <strong>{profileData.wingedLight}</strong></span>
+              </li>
+              <li className={styles.statItem}>
+                <Image 
+                  src="/images/icons/icon-ac.png" 
+                  alt="Ascended Candle icon" 
+                  width={24} 
+                  height={24} 
+                />
+                <span>Ascended Candle: <strong>{profileData.ascendedCandles}</strong></span>
+              </li>
             </ul>
           </InfoCard>
 
           <InfoCard title="Current Outfit">
-            <ul className={styles.outfitList}>
+            <div className={styles.outfitGrid}>
               {Object.entries(profileData.currentOutfit).map(([type, name]) => (
-                <li key={type}>
-                  <span>{type}:</span> {name}
-                </li>
+                <div key={type} className={styles.outfitItem}>
+                  <span className={styles.outfitType}>{type}:</span>
+                  <span className={styles.outfitName}>{name}</span>
+                </div>
               ))}
-            </ul>
+            </div>
           </InfoCard>
         </div>
 
+        {/* --- KANAN --- */}
         <div className={styles.rightColumn}>
           <InfoCard title="Friend Code">
-            <p>Let's be friends!</p>
+            {/* INI PERBAIKANNYA */}
+            <p>Let&apos;s be friends!</p>
             <p className={styles.friendCodeText}>ID: {profileData.friendCode}</p>
             <div className={styles.qrCodeContainer}>
               <Image
