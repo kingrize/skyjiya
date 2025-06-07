@@ -1,24 +1,33 @@
-/* src/components/ui/InfoCard.module.css */
+/* src/components/ui/InfoCard.module.css (Ini sudah versi yang benar) */
 .card {
   margin-bottom: 2.5rem;
-  padding: 1.5rem 2rem;
-  /* Efek Kaca Buram (Glassmorphism) */
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
+  padding: 2rem;
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
   border-radius: 16px;
-  box-shadow: 0 8px 32px 0 rgba(131, 138, 157, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .card h3 {
   margin-top: 0;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid rgba(173, 216, 230, 0.7);
-  padding-bottom: 0.75rem;
-  color: #0c4a6e; /* Warna biru tua untuk judul kartu */
-  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-bottom: none;
 }
 
 .content {
   line-height: 1.7;
+  color: var(--color-text-muted);
 }

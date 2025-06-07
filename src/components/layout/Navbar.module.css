@@ -1,30 +1,35 @@
 /* src/components/layout/Navbar.module.css */
 .navbar {
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(5px);
+  /* Menggunakan variabel agar bisa berubah saat dark mode */
+  background-color: rgba(var(--color-card-bg-rgb, 255, 255, 255), 0.7);
+  backdrop-filter: blur(10px);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--color-accent2);
+  border-bottom: 1px solid var(--color-border);
   width: 100%;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  position: sticky; top: 0; z-index: 10;
 }
 .brand {
   font-family: var(--font-heading);
   font-size: 1.8rem;
-  color: var(--color-primary);
+  color: var(--color-text);
+  transition: color 0.3s ease;
 }
-.brand:hover { text-decoration: none; }
+.brand:hover { text-decoration: none; color: var(--color-accent-gold); }
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
 .navLinks a {
-  margin-left: 1.5rem;
   font-size: 1.1rem;
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
+  font-weight: 600;
   transition: color 0.3s ease;
 }
 .navLinks a:hover {
-  color: var(--color-accent1);
   text-decoration: none;
+  color: var(--color-text);
 }

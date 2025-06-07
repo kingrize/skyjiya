@@ -1,0 +1,88 @@
+/* src/components/layout/Sidebar.module.css */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  background: var(--color-panel-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid var(--color-panel-border);
+  z-index: 1000; /* Z-index lebih tinggi */
+  transition: transform 0.3s ease-in-out;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding: 0 0.5rem;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+.logo a { color: inherit; text-decoration: none; }
+
+.closeButton {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 2.5rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.nav { flex-grow: 1; }
+.navList { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.link, .activeLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem; /* Padding lebih ke dalam */
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  position: relative;
+}
+
+.link { color: var(--color-text-muted); }
+.link:hover { background-color: rgba(255, 255, 255, 0.05); color: var(--color-text); }
+
+/* --- PERUBAHAN STYLE LINK AKTIF --- */
+.activeLink {
+  background-color: rgba(250, 204, 21, 0.1); /* Latar kuning transparan */
+  color: var(--color-accent-gold);
+  font-weight: 700;
+}
+
+/* Garis di kiri sebagai indikator aktif */
+.activeLink::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 60%;
+  background-color: var(--color-accent-gold);
+  border-radius: 0 4px 4px 0;
+}
+
+@media (max-width: 900px) {
+  .sidebar { transform: translateX(-100%); }
+  .sidebar.isOpen { transform: translateX(0); }
+  .closeButton { display: block; }
+}
