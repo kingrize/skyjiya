@@ -36,7 +36,8 @@ body {
   padding: 0;
   line-height: 1.7;
   min-height: 100vh;
-  overflow: hidden; /* Penting untuk mencegah scroll saat bintang menyebar */
+  overflow-x: hidden;
+  overflow-y: auto; /* Penting untuk mencegah scroll saat bintang menyebar */
   position: relative;
 }
 

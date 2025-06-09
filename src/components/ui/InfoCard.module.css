@@ -1,14 +1,15 @@
 /* src/components/ui/InfoCard.module.css (Ini sudah versi yang benar) */
 .card {
-  background: rgba(30,34,44,0.77);
-  backdrop-filter: blur(8px);
-  border-radius: 1.2rem;
-  padding: 2rem 2.5rem;
-  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.13);
-  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(24,28,38,0.66); /* Transparan */
+  border-radius: 1.25rem;
+  padding: 2rem 2.2rem;
+  box-shadow: 0 6px 24px 0 rgba(0,0,0,0.17);
+  border: 1px solid rgba(250,204,21,0.05);
   transition: transform 0.22s cubic-bezier(.4,2,.5,1), box-shadow 0.22s;
   margin-bottom: 0.7rem;
+  color: #e6edf3;
 }
+
 
 .card:hover {
   transform: translateY(-6px) scale(1.013);
