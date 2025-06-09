@@ -1,17 +1,18 @@
 /* src/components/ui/InfoCard.module.css (Ini sudah versi yang benar) */
 .card {
-  margin-bottom: 2.5rem;
-  padding: 2rem;
-  background-color: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  background: rgba(30,34,44,0.77);
+  backdrop-filter: blur(8px);
+  border-radius: 1.2rem;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.13);
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: transform 0.22s cubic-bezier(.4,2,.5,1), box-shadow 0.22s;
+  margin-bottom: 0.7rem;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-6px) scale(1.013);
+  box-shadow: 0 12px 36px 0 rgba(0,0,0,0.13);
 }
 
 .card h3 {
@@ -27,7 +28,41 @@
   border-bottom: none;
 }
 
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+.icon {
+  font-size: 1.7rem;
+  color: var(--color-accent-gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.card h3 {
+  font-size: 1.17rem;
+  font-family: var(--font-heading);
+  color: var(--color-accent-gold);
+  margin: 0 0 0.1em 0;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.card .subtitle {
+  font-size: 1rem;
+  color: #ffe066;
+  opacity: 0.85;
+  font-weight: 500;
+  margin-bottom: 0.15em;
+}
+
 .content {
+  font-size: 1.06rem;
+  color: #f5f5f7;
   line-height: 1.7;
-  color: var(--color-text-muted);
+  word-break: break-word;
+}
+
+@media (max-width: 900px) {
+  .card { padding: 1.3rem 1rem; }
 }
