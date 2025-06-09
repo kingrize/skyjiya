@@ -81,6 +81,66 @@ export default function HomePage() {
                 </li>
               </ul>
             </InfoCard>
+            
+            {/* SOCIAL & CONTACT */}
+            <InfoCard title="Social & Contact">
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", gap: 16 }}>
+                <li>
+                  <a href="https://discordapp.com/users/yourid" target="_blank" rel="noopener noreferrer" style={{ color: "#7289da", textDecoration: "none", display: "flex", alignItems: "center", gap: 7 }}>
+                    <span role="img" aria-label="discord">💬</span> Discord: SkyJiya#1234
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" style={{ color: "#1da1f2", textDecoration: "none", display: "flex", alignItems: "center", gap: 7 }}>
+                    <span role="img" aria-label="twitter">🐦</span> Twitter: @skyjiya
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:your@email.com" style={{ color: "#e6edf3", textDecoration: "none", display: "flex", alignItems: "center", gap: 7 }}>
+                    <span role="img" aria-label="mail">📧</span> Email: your@email.com
+                  </a>
+                </li>
+              </ul>
+            </InfoCard>
+
+            {/* FAVORITES */}
+            <InfoCard title="Favorites">
+              <div>
+                <b>Cosmetics:</b> Umbrella ☂️, Top Hat 🎩, Crab Mask 🦀<br />
+                <b>Props:</b> Swing 🪢, Table 🛋️, Music Sheet 🎼<br />
+                <b>Spirits:</b> Lightseekers ✨, Manta Whisperer 🐋
+              </div>
+            </InfoCard>
+
+            {/* MOTTO */}
+            <InfoCard title="Motto">
+              <blockquote style={{ color: "#ffe066", fontStyle: "italic", fontSize: "1.13em", margin: 0, paddingLeft: "0.5em", borderLeft: "3px solid #facc15" }}>
+                &quot;Fly high, shine bright, and light up every darkness.&quot;
+              </blockquote>
+            </InfoCard>
+
+            {/* JOURNEY */}
+            <InfoCard title="Journey">
+              <div>
+                <b>Started Playing:</b> February 2021<br />
+                <b>Total Playtime:</b> 750+ hours
+              </div>
+            </InfoCard>
+
+            {/* BEST FRIENDS */}
+            <InfoCard title="Best Friends">
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", gap: 16 }}>
+                <li>
+                  <span role="img" aria-label="cloud">☁️</span> CloudRunner
+                </li>
+                <li>
+                  <span role="img" aria-label="star">⭐</span> StarWhisper
+                </li>
+                <li>
+                  <span role="img" aria-label="moth">🦋</span> MothKing
+                </li>
+              </ul>
+            </InfoCard>
           </div>
         )}
         {activeTab === 'friend_code' && (
