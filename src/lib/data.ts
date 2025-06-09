@@ -1,7 +1,7 @@
 // src/lib/data.ts (Versi Terbaru)
 
 export const profileData = {
-  ign: 'JIYA', // Ganti dengan nama Anda
+  ign: 'Jiya!', // Ganti dengan nama Anda
   friendCode: 'ABCD-1234-WXYZ', // Ganti dengan kode teman Anda
   qrCodeUrl: '/images/sky-qrcode.png',
   avatarUrl: '/images/avatar.jpg', // <-- INI BARIS YANG DITAMBAHKAN
