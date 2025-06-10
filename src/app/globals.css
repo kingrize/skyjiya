@@ -148,3 +148,46 @@ body::after {
     padding: 7px;
   }
 }
+
+body::-webkit-scrollbar {
+  width: 8px;
+  background: rgba(18,20,28,0.8);
+}
+body::-webkit-scrollbar-thumb {
+  background: #2c303c;
+  border-radius: 6px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: #facc15;
+}
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #2c303c rgba(18,20,28,0.8);
+}
+.main-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.main-content {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0;
+  position: relative;
+  background: transparent;
+  z-index: 1;
+  /* Untuk desktop, beri margin left buat sidebar */
+  margin-left: 250px;
+}
+
+@media (max-width: 900px) {
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}

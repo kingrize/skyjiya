@@ -34,16 +34,17 @@ const ParticlesBackground = () => {
       particles: {
         color: { value: ["#fff", "#ffe066", "#facc15"] },
         move: {
-          direction: "top",
+          direction: "none",
           enable: true,
           random: true,
-          speed: 0.2,
+          speed: 0.18,
           straight: false,
+          outModes: { default: "out" },
         },
         number: { value: 80 },
         opacity: { value: { min: 0.2, max: 0.8 } },
-        shape: { type: "circle" },
-        size: { value: { min: 1, max: 3 } },
+        shape: { type: ["circle", "star"] }, // <--- shooting star style
+        size: { value: { min: 1, max: 3.5 } },
         links: { enable: false },
       },
       detectRetina: true,

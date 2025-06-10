@@ -1,6 +1,6 @@
 /* src/components/ui/InfoCard.module.css (Ini sudah versi yang benar) */
 .card {
-  background: rgba(24,28,38,0.66); /* Transparan */
+  background: rgba(24,28,38,0.66);
   border-radius: 1.25rem;
   padding: 2rem 2.2rem;
   box-shadow: 0 6px 24px 0 rgba(0,0,0,0.17);
@@ -8,12 +8,18 @@
   transition: transform 0.22s cubic-bezier(.4,2,.5,1), box-shadow 0.22s;
   margin-bottom: 0.7rem;
   color: #e6edf3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 
 .card:hover {
-  transform: translateY(-6px) scale(1.013);
-  box-shadow: 0 12px 36px 0 rgba(0,0,0,0.13);
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 14px 48px 0 rgba(0,0,0,0.17);
+  z-index: 2;
+  border-left: 4px solid #facc15;
 }
 
 .card h3 {
@@ -66,4 +72,16 @@
 
 @media (max-width: 900px) {
   .card { padding: 1.3rem 1rem; }
+}
+.contentGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2.2rem;
+}
+@media (max-width: 1100px) {
+  .contentGrid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  .contentGrid { grid-template-columns: 1fr; }
 }
