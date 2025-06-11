@@ -32,33 +32,35 @@ export default function HomePage() {
 
   return (
     <div className={styles.pageWrapper}>
-      {/* HERO SECTION */}
-      <div className={styles.heroSection}>
+      {/* SAMPUL */}
+      <div className={styles.coverWrapper}>
         <Image
           src="/images/sky-hero.png"
           alt="Sky hero banner"
           fill
-          className={styles.heroImage}
+          className={styles.coverImage}
           priority
         />
-        <div className={styles.heroOverlay}></div>
-        {/* PAKAI heroContent! */}
-        <div className={styles.heroContent}>
-          <div className={styles.avatarWrapper}>
-            <Image
-              src={profileData.avatarUrl}
-              alt="Profile Avatar"
-              width={93}
-              height={93}
-              className={styles.avatar}
-              priority
-            />
+      </div>
+
+      {/* PROFIL HEADER */}
+      <div className={styles.profileHeader}>
+        <div className={styles.avatarWrapper}>
+          <Image
+            src={profileData.avatarUrl}
+            alt="Profile Avatar"
+            width={110}
+            height={110}
+            className={styles.avatar}
+            priority
+          />
+        </div>
+        <div className={styles.profileMain}>
+          <div className={styles.profileText}>
+            <h1 className={styles.name}>{profileData.ign}</h1>
+            <p className={styles.status}>{profileData.playstyle}</p>
           </div>
-          <div className={styles.heroText}>
-            <h1>{profileData.ign}</h1>
-            <p>{profileData.playstyle}</p>
-          </div>
-          <div className={styles.heroActions}>
+          <div className={styles.headerActions}>
             <button className={`${styles.button} ${styles.primary}`}>
               <MessageIcon /> Message
             </button>

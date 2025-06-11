@@ -4,97 +4,94 @@
   padding-bottom: 2.5rem;
 }
 
-/* ==== HERO SECTION ==== */
-.heroSection {
+/* ==== COVER (SAMPUL) ==== */
+.coverWrapper {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  min-height: 330px;
-  padding: 0 2.2rem 2.3rem 2.2rem;
-  background: #191e2a;
+  width: 100%;
+  height: 220px;
   border-radius: 0 0 1.2rem 1.2rem;
   overflow: hidden;
-  margin-bottom: 2.5rem;
+  background: #222735;
 }
-.heroImage {
-  position: absolute;
-  inset: 0;
+.coverImage {
+  object-fit: cover;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  opacity: 0.93;
-  z-index: 0;
+  opacity: 0.97;
 }
-.heroOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg,rgba(16,16,21,0.22) 56%,#191e2a 99%);
-  z-index: 1;
-}
-/* ---- Hero Content Layout ---- */
-.heroContent {
+
+/* ==== PROFILE HEADER ==== */
+.profileHeader {
   position: relative;
   width: 100%;
-  z-index: 2;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 2rem;
+  z-index: 10;
+  padding: 0 2.2rem;
+  margin-top: -60px; /* avatar overlap ke banner */
+  margin-bottom: 2.5rem;
 }
 .avatarWrapper {
-  width: 105px;
-  height: 105px;
-  background: #252a36;
+  position: relative;
+  width: 112px;
+  height: 112px;
+  min-width: 112px;
   border-radius: 50%;
-  box-shadow: 0 0 0 5px #252a36, 0 0 19px 2px #ffe06688;
+  background: #23283b;
+  box-shadow: 0 4px 18px #23283b36, 0 0 0 5px #fff3, 0 0 22px 1px #ffe06699;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  overflow: hidden;
+  border: 4px solid #ffe066;
 }
 .avatar {
-  width: 93px;
-  height: 93px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  border: 3px solid #ffe066;
-  background: #23293a;
   object-fit: cover;
-  box-shadow: 0 1px 7px #0004;
+  background: #25293d;
+  border: none;
 }
-/* --- HERO TEXT --- */
-.heroText {
+.profileMain {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex: 1 1 auto;
+  padding-bottom: 1.1rem;
+  gap: 1.3rem;
+}
+.profileText {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 0.22rem;
   min-width: 0;
-  max-width: 420px;
 }
-.heroText h1 {
-  font-size: 2rem;
+.name {
+  font-size: 2.05rem;
   font-family: var(--font-heading);
   color: #ffe066;
   font-weight: 800;
-  margin: 0 0 0.14em 0;
-  letter-spacing: 0.03em;
-  line-height: 1.1;
+  margin-bottom: 0.1rem;
+  letter-spacing: 0.02em;
   text-shadow: 0 2px 6px #23293a60;
+  line-height: 1.1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.heroText p {
+.status {
   color: #e0e4ef;
-  opacity: 0.96;
-  font-size: 1.13rem;
-  margin: 0;
+  font-size: 1.15rem;
   font-weight: 500;
+  opacity: 0.97;
   letter-spacing: 0.01em;
-  word-break: break-word;
+  margin-bottom: 0;
+  margin-top: 0;
+  white-space: normal;
 }
-/* --- HERO ACTIONS --- */
-.heroActions {
-  margin-left: auto;
+.headerActions {
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -192,72 +189,57 @@
 
 /* ==== RESPONSIVE: MOBILE FRIENDLY ==== */
 @media (max-width: 700px) {
-  .heroSection {
-    min-height: 205px;
-    padding: 0 0.9rem 1.1rem 0.9rem;
-    border-radius: 0 0 1.05rem 1.05rem;
-    margin-bottom: 1.2rem;
+  .coverWrapper {
+    height: 140px;
+    border-radius: 0 0 1.1rem 1.1rem;
   }
-  .heroContent {
+  .profileHeader {
     flex-direction: column;
     align-items: center;
-    gap: 0.55rem;
-    width: 100%;
-    padding-top: 0.5rem;
-    padding-bottom: 0.14rem;
+    gap: 0.4rem;
+    margin-top: -64px;
+    margin-bottom: 1.6rem;
+    padding: 0 0.7rem;
   }
   .avatarWrapper {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 0.07rem auto;
-    box-shadow: 0 0 0 2.5px #252a36, 0 0 10px 1px #ffe06677;
+    width: 90px;
+    height: 90px;
+    min-width: 90px;
+    margin: 0 auto 0.4rem auto;
+    border-width: 3px;
   }
-  .avatar {
-    width: 72px;
-    height: 72px;
-    border-width: 2.1px;
+  .profileMain {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    padding-bottom: 0.7rem;
+    width: 100%;
   }
-  .heroText {
-    max-width: 95vw;
-    margin: 0 auto;
+  .name {
+    font-size: 1.25rem;
     text-align: center;
-  }
-  .heroText h1 {
-    font-size: 1.18rem;
-    margin-bottom: 0.1em;
-    text-align: center;
+    margin-top: 0.2rem;
     white-space: normal;
   }
-  .heroText p {
-    font-size: 0.97rem;
-    line-height: 1.18;
-    margin-bottom: 0;
+  .status {
+    font-size: 0.99rem;
     text-align: center;
+    margin-top: 0.07rem;
+    margin-bottom: 0.13rem;
   }
-  .heroActions {
-    flex-direction: row;
-    gap: 0.6rem;
-    margin: 0.6rem auto 0 auto;
-    width: 100%;
+  .headerActions {
+    margin-top: 0.5rem;
+    gap: 0.45rem;
     justify-content: center;
-    max-width: 320px;
-  }
-  .button {
-    font-size: 0.95rem;
-    padding: 0.52em 1em;
-    width: auto;
-    min-width: 0;
-    max-width: 100%;
-    white-space: nowrap;
-    border-radius: 1.2em;
+    width: 100%;
   }
   .tabContent {
     padding: 0 0.25rem;
   }
 }
 @media (max-width: 420px) {
-  .avatarWrapper { width: 58px; height: 58px; }
+  .avatarWrapper { width: 58px; height: 58px; min-width: 58px;}
   .avatar { width: 50px; height: 50px; }
-  .heroText h1 { font-size: 1rem; }
-  .heroActions { gap: 0.37rem; margin-left: 0.12rem; }
+  .name { font-size: 1rem; }
+  .headerActions { gap: 0.37rem; }
 }
