@@ -33,7 +33,7 @@ export default function HomePage() {
   return (
     <div className={styles.pageWrapper}>
       {/* HERO SECTION */}
-      <div className={styles.heroSection} style={{ minHeight: 350 }}>
+      <div className={styles.heroSection}>
         <Image
           src="/images/sky-hero.png"
           alt="Sky hero banner"
@@ -42,22 +42,23 @@ export default function HomePage() {
           priority
         />
         <div className={styles.heroOverlay}></div>
-        <div className={styles.profileRow}>
+        {/* PAKAI heroContent! */}
+        <div className={styles.heroContent}>
           <div className={styles.avatarWrapper}>
             <Image
               src={profileData.avatarUrl}
               alt="Profile Avatar"
-              width={100}
-              height={100}
+              width={93}
+              height={93}
               className={styles.avatar}
               priority
             />
           </div>
-          <div className={styles.profileText}>
+          <div className={styles.heroText}>
             <h1>{profileData.ign}</h1>
             <p>{profileData.playstyle}</p>
           </div>
-          <div className={styles.profileActions}>
+          <div className={styles.heroActions}>
             <button className={`${styles.button} ${styles.primary}`}>
               <MessageIcon /> Message
             </button>
