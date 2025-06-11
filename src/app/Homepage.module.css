@@ -55,36 +55,45 @@
   object-fit: cover;
 }
 
-/* ==== PROFILE INFO ==== */
-.profileInfo {
-  position: relative;
+/* ==== PROFILE ROW ==== */
+.profileRow {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  width: 100%;
   z-index: 3;
-  margin-left: 11.3rem; /* agar tidak nabrak avatar */
-  margin-top: 2.6rem;
+  position: relative;
+}
+.profileText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 2rem;
 }
 .profileText h1 {
-  font-size: 2rem;
+  font-size: 2.1rem;
   font-family: var(--font-heading);
-  margin-bottom: 0.25rem;
   color: #ffe066;
-  line-height: 1.2;
+  font-weight: 800;
+  margin: 0 0 0.19rem 0;
+  letter-spacing: 0.03em;
+  line-height: 1.14;
 }
 .profileText p {
-  color: #e6edf3;
-  opacity: 0.84;
-  font-size: 1.1rem;
+  color: #e0e4ef;
+  opacity: 0.88;
+  font-size: 1.08rem;
+  margin: 0;
   font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.profileActions {
+  margin-left: auto;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 /* ==== BUTTON ==== */
-.profileActions {
-  display: flex;
-  gap: 1rem;
-  margin-left: auto;
-}
 .button {
   background: #23293a;
   color: #facc15;
@@ -140,7 +149,6 @@
   color: #23293a;
   opacity: 1;
 }
-
 .tabContent {
   margin-top: 1.7rem;
   width: 100%;
@@ -161,19 +169,6 @@
   .contentGrid { grid-template-columns: 1fr; }
 }
 
-
-/* Filler untuk card agar row terakhir tetap rata */
-.invisibleCard {
-  background: none !important;
-  box-shadow: none !important;
-  border: none !important;
-  pointer-events: none;
-  visibility: hidden;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 /* Section Divider */
 .sectionDivider {
   height: 1.2px;
@@ -183,61 +178,79 @@
   opacity: 0.33;
   border-radius: 1.1rem;
 }
-/* ==== RESPONSIVE AVATAR + HERO ==== */
-@media (max-width: 600px) {
+
+/* ==== RESPONSIVE: MOBILE FRIENDLY ==== */
+@media (max-width: 700px) {
+  .heroSection {
+    min-height: 260px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-bottom: 1.2rem;
+  }
+  .profileRow {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0.7rem;
+    position: static;
+    margin-top: 2rem;
+    margin-left: 0;
+  }
   .avatarWrapper {
-    width: 72px;
-    height: 72px;
-    left: 1rem;
-    bottom: -36px;
+    margin: 0 0 0 1.2rem;
+    width: 68px;
+    height: 68px;
+    box-shadow: 0 0 0 2.5px #23293a, 0 0 8px 1px #ffe06660;
   }
   .avatar {
-    width: 64px;
-    height: 64px;
-    border-width: 2.5px;
+    width: 60px;
+    height: 60px;
+    border-width: 2px;
   }
-  .profileInfo {
-    margin-left: 5.5rem;
-    margin-top: 1.3rem;
-    gap: 1.2rem;
+  .profileText {
+    margin-left: 0.8rem;
+    margin-top: 0.2rem;
   }
   .profileText h1 {
-    font-size: 1.22rem;
+    font-size: 1.25rem;
+    line-height: 1.1;
+  }
+  .profileText p {
+    font-size: 0.95rem;
+  }
+  .profileActions {
+    flex-direction: row;
+    gap: 0.65rem;
+    margin-left: 0.5rem;
+    margin-top: 0.7rem;
+    width: 100%;
+  }
+  .button {
+    font-size: 0.98rem;
+    padding: 0.6em 1.3em;
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+    white-space: nowrap;
   }
 }
-.profileRow {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  z-index: 3;
-  position: relative;
-}
-.profileText {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 2rem;
-}
-.profileText h1 {
-  font-size: 2.1rem;
-  font-family: var(--font-heading);
-  color: #ffe066;
-  font-weight: 800;
-  margin: 0 0 0.19rem 0;
-  letter-spacing: 0.03em;
-  line-height: 1.14;
-}
-.profileText p {
-  color: #e0e4ef;
-  opacity: 0.88;
-  font-size: 1.08rem;
-  margin: 0;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-}
-.profileActions {
-  margin-left: auto;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
+
+@media (max-width: 410px) {
+  .heroSection {
+    min-height: 190px;
+    padding-bottom: 0.4rem;
+  }
+  .profileActions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    margin-left: 0;
+  }
+  .button {
+    width: 100%;
+    min-width: 0;
+    font-size: 0.94rem;
+    padding: 0.7em 1em;
+  }
 }
