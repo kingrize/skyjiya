@@ -6,52 +6,51 @@
 
 /* ==== HERO SECTION + AVATAR ==== */
 .heroSection {
-  position: relative;
-  width: 100%;
-  min-height: 260px; /* agak diperkecil agar avatar tidak terpotong, adjust kalau perlu */
-  padding-bottom: 55px; /* PENTING: beri padding agar avatar overlap tidak kepotong */
-  background: #14171f;
-  border-radius: 0 0 1.2rem 1.2rem;
-  overflow: visible; /* biar avatar bisa “keluar” */
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: flex-start;
+  background: #14171f;
+  min-height: 360px;
+  padding-bottom: 70px;
+  position: relative;
+  border-radius: 0 0 1.2rem 1.2rem;
+  overflow: visible;
+  margin-bottom: 2.5rem;
 }
 .heroImage {
   position: absolute;
   inset: 0;
-  object-fit: cover;
-  object-position: center;
-  opacity: 0.95;
-  z-index: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  opacity: 0.93;
+  z-index: 0;
 }
 .heroOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg,rgba(14,14,17,0.25) 60%,#14171f 100%);
+  background: linear-gradient(180deg,rgba(16,16,21,0.19) 60%,#14171f 100%);
   z-index: 1;
 }
 .avatarWrapper {
   position: relative;
   z-index: 3;
-  margin-left: 2.2rem;
-  margin-bottom: -55px; /* benar-benar overlap ke bawah heroSection */
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  box-shadow: 0 0 0 6px #23293a, 0 0 22px 3px #ffe06699;
-  background: #23293a;
+  width: 112px;
+  height: 112px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 2.2rem;
+  box-shadow: 0 0 0 4px #23293a, 0 0 14px 2px #ffe06660;
+  background: #23293a;
+  border-radius: 50%;
 }
 .avatar {
-  width: 108px;
-  height: 108px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  border: 4px solid #ffe066;
-  box-shadow: 0 2px 12px #0009;
+  border: 3px solid #ffe066;
+  box-shadow: 0 1px 7px #0006;
   background: #252728;
   object-fit: cover;
 }
@@ -150,22 +149,18 @@
 /* ==== GRID CARD SECTION ==== */
 .contentGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.3rem;
   align-items: stretch;
-  justify-content: center;
   width: 100%;
 }
-@media (max-width: 900px) {
-  .contentGrid {
-    grid-template-columns: 1fr 1fr;
-  }
+@media (max-width: 1050px) {
+  .contentGrid { grid-template-columns: 1fr 1fr; }
 }
-@media (max-width: 600px) {
-  .contentGrid {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 700px) {
+  .contentGrid { grid-template-columns: 1fr; }
 }
+
 
 /* Filler untuk card agar row terakhir tetap rata */
 .invisibleCard {
@@ -181,13 +176,13 @@
 
 /* Section Divider */
 .sectionDivider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #2d323c 25%, #facc15 55%, #2d323c 75%, transparent);
+  height: 1.2px;
+  background: linear-gradient(90deg, transparent, #2d323c 18%, #facc15 56%, #2d323c 83%, transparent);
   border: none;
   margin: 2rem 0 1.5rem 0;
-  opacity: 0.35;
+  opacity: 0.33;
+  border-radius: 1.1rem;
 }
-
 /* ==== RESPONSIVE AVATAR + HERO ==== */
 @media (max-width: 600px) {
   .avatarWrapper {
@@ -212,29 +207,33 @@
 }
 .profileRow {
   display: flex;
-  align-items: center;    /* ganti ke center untuk benar-benar rata tengah */
+  align-items: center;
   width: 100%;
-  z-index: 5;
+  z-index: 3;
+  position: relative;
 }
 .profileText {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 1.7rem; /* Jarak horizontal ke avatar */
+  margin-left: 2rem;
 }
 .profileText h1 {
-  font-size: 2rem;
+  font-size: 2.1rem;
   font-family: var(--font-heading);
   color: #ffe066;
-  line-height: 1.2;
-  margin: 0 0 0.25rem 0;
+  font-weight: 800;
+  margin: 0 0 0.19rem 0;
+  letter-spacing: 0.03em;
+  line-height: 1.14;
 }
 .profileText p {
-  color: #e6edf3;
-  opacity: 0.84;
-  font-size: 1.1rem;
-  font-weight: 500;
+  color: #e0e4ef;
+  opacity: 0.88;
+  font-size: 1.08rem;
   margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 .profileActions {
   margin-left: auto;

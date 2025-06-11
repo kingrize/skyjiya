@@ -33,7 +33,7 @@ export default function HomePage() {
   return (
     <div className={styles.pageWrapper}>
       {/* HERO SECTION */}
-      <div className={styles.heroSection}>
+      <div className={styles.heroSection} style={{ minHeight: 350 }}>
         <Image
           src="/images/sky-hero.png"
           alt="Sky hero banner"
@@ -47,8 +47,8 @@ export default function HomePage() {
             <Image
               src={profileData.avatarUrl}
               alt="Profile Avatar"
-              width={108}
-              height={108}
+              width={100}
+              height={100}
               className={styles.avatar}
               priority
             />
@@ -67,7 +67,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      
+
       {/* TAB NAV */}
       <nav className={styles.tabNav}>
         <button 
@@ -87,137 +87,138 @@ export default function HomePage() {
       {/* TAB CONTENT */}
       <div className={styles.tabContent}>
         {activeTab === 'overview' && (
-          <div className={styles.contentGrid}>
-            {/* ABOUT ME */}
-            <InfoCard title="About Me">
-              <div style={{ lineHeight: 1.6 }}>
-                Hello! This is my personal space to share my adventures in the world of <b>Sky: Children of the Light</b>.<br />
-                <span style={{ color: "#ffe066" }}>Loves:</span> Candle Running, Music Player, OOB Exploring.<br />
-                <span style={{ color: "#ffe066" }}>Playstyle:</span> Chill &amp; Social
-              </div>
-            </InfoCard>
-            <InfoCard title="Game Stats">
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                <li style={{ display: "flex", alignItems: "center", marginBottom: 8 }}>
-                  <FaFeather color="#facc15" size={22} style={{ marginRight: 10 }} />
-                  <span style={{ fontWeight: 500, minWidth: 140, display: "inline-block" }}>Winged Light:</span>
-                  <span style={{ fontWeight: 700, color: "#facc15" }}>{profileData.wingedLight}</span>
-                </li>
-                <li style={{ display: "flex", alignItems: "center" }}>
-                  <FaFire color="#facc15" size={22} style={{ marginRight: 10 }} />
-                  <span style={{ fontWeight: 500, minWidth: 140, display: "inline-block" }}>Ascended Candle:</span>
-                  <span style={{ fontWeight: 700, color: "#facc15" }}>{profileData.ascendedCandles}</span>
-                </li>
-              </ul>
-            </InfoCard>
-            {/* DIVIDER */}
+          <>
+            {/* Section 1: 3 card */}
+            <div className={styles.contentGrid}>
+              <InfoCard title="About Me">
+                <div style={{ lineHeight: 1.6 }}>
+                  Hello! This is my personal space to share my adventures in the world of <b>Sky: Children of the Light</b>.<br />
+                  <span style={{ color: "#ffe066" }}>Loves:</span> Candle Running, Music Player, OOB Exploring.<br />
+                  <span style={{ color: "#ffe066" }}>Playstyle:</span> Chill &amp; Social
+                </div>
+              </InfoCard>
+              <InfoCard title="Game Stats">
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  <li style={{ display: "flex", alignItems: "center", marginBottom: 8 }}>
+                    <FaFeather color="#facc15" size={22} style={{ marginRight: 10 }} />
+                    <span style={{ fontWeight: 500, minWidth: 140, display: "inline-block" }}>Winged Light:</span>
+                    <span style={{ fontWeight: 700, color: "#facc15" }}>{profileData.wingedLight}</span>
+                  </li>
+                  <li style={{ display: "flex", alignItems: "center" }}>
+                    <FaFire color="#facc15" size={22} style={{ marginRight: 10 }} />
+                    <span style={{ fontWeight: 500, minWidth: 140, display: "inline-block" }}>Ascended Candle:</span>
+                    <span style={{ fontWeight: 700, color: "#facc15" }}>{profileData.ascendedCandles}</span>
+                  </li>
+                </ul>
+              </InfoCard>
+              <InfoCard title="Social & Contact">
+                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                  <li style={{ display: "flex", alignItems: "center", marginBottom: 6 }}>
+                    <FaDiscord
+                      size={19}
+                      color="#7289da"
+                      style={{ marginRight: 8, cursor: "pointer" }}
+                      data-tooltip-id="discordtip"
+                      data-tooltip-content="Add me on Discord"
+                    />
+                    <a href="https://discordapp.com/users/yourid" target="_blank" rel="noopener noreferrer" style={{ color: "#7289da", fontWeight: 500, textDecoration: "none" }}>
+                      SkyJiya#1234
+                    </a>
+                  </li>
+                  <li style={{ display: "flex", alignItems: "center", marginBottom: 6 }}>
+                    <FaTwitter
+                      size={19}
+                      color="#1da1f2"
+                      style={{ marginRight: 8, cursor: "pointer" }}
+                      data-tooltip-id="twittertip"
+                      data-tooltip-content="Follow me on Twitter"
+                    />
+                    <a href="https://twitter.com/skyjiya" target="_blank" rel="noopener noreferrer" style={{ color: "#1da1f2", fontWeight: 500, textDecoration: "none" }}>
+                      @skyjiya
+                    </a>
+                  </li>
+                  <li style={{ display: "flex", alignItems: "center" }}>
+                    <FaEnvelope
+                      size={17}
+                      color="#e6edf3"
+                      style={{ marginRight: 8, cursor: "pointer" }}
+                      data-tooltip-id="mailtip"
+                      data-tooltip-content="Email me!"
+                    />
+                    <a href="mailto:your@email.com" style={{ color: "#e6edf3", fontWeight: 500, textDecoration: "none" }}>
+                      your@email.com
+                    </a>
+                  </li>
+                </ul>
+                {/* Tooltip component untuk setiap icon */}
+                <Tooltip id="discordtip" place="top" />
+                <Tooltip id="twittertip" place="top" />
+                <Tooltip id="mailtip" place="top" />
+              </InfoCard>
+            </div>
             <hr className={styles.sectionDivider} />
-            {/* SOCIAL & CONTACT */}
-            <InfoCard title="Social & Contact">
-              <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                <li style={{ display: "flex", alignItems: "center", marginBottom: 6 }}>
-                  <FaDiscord
-                    size={19}
-                    color="#7289da"
-                    style={{ marginRight: 8, cursor: "pointer" }}
-                    data-tooltip-id="discordtip"
-                    data-tooltip-content="Add me on Discord"
-                  />
-                  <a href="https://discordapp.com/users/yourid" target="_blank" rel="noopener noreferrer" style={{ color: "#7289da", fontWeight: 500, textDecoration: "none" }}>
-                    SkyJiya#1234
-                  </a>
-                </li>
-                <li style={{ display: "flex", alignItems: "center", marginBottom: 6 }}>
-                  <FaTwitter
-                    size={19}
-                    color="#1da1f2"
-                    style={{ marginRight: 8, cursor: "pointer" }}
-                    data-tooltip-id="twittertip"
-                    data-tooltip-content="Follow me on Twitter"
-                  />
-                  <a href="https://twitter.com/skyjiya" target="_blank" rel="noopener noreferrer" style={{ color: "#1da1f2", fontWeight: 500, textDecoration: "none" }}>
-                    @skyjiya
-                  </a>
-                </li>
-                <li style={{ display: "flex", alignItems: "center" }}>
-                  <FaEnvelope
-                    size={17}
-                    color="#e6edf3"
-                    style={{ marginRight: 8, cursor: "pointer" }}
-                    data-tooltip-id="mailtip"
-                    data-tooltip-content="Email me!"
-                  />
-                  <a href="mailto:your@email.com" style={{ color: "#e6edf3", fontWeight: 500, textDecoration: "none" }}>
-                    your@email.com
-                  </a>
-                </li>
-              </ul>
-              {/* Tooltip component untuk setiap icon */}
-              <Tooltip id="discordtip" place="top" />
-              <Tooltip id="twittertip" place="top" />
-              <Tooltip id="mailtip" place="top" />
-            </InfoCard>
-            {/* FAVORITES */}
-            <InfoCard title="Favorites">
-              <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
-                <div>
-                  <div style={{ fontWeight: 600, marginBottom: 4 }}>Cosmetics</div>
-                  <ul style={{ paddingLeft: 16, margin: 0 }}>
-                    <li>Umbrella</li>
-                    <li>Top Hat</li>
-                    <li>Crab Mask</li>
-                  </ul>
+
+            {/* Section 2: 3 card */}
+            <div className={styles.contentGrid}>
+              <InfoCard title="Favorites">
+                <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
+                  <div>
+                    <div style={{ fontWeight: 600, marginBottom: 4 }}>Cosmetics</div>
+                    <ul style={{ paddingLeft: 16, margin: 0 }}>
+                      <li>Umbrella</li>
+                      <li>Top Hat</li>
+                      <li>Crab Mask</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <div style={{ fontWeight: 600, marginBottom: 4 }}>Props</div>
+                    <ul style={{ paddingLeft: 16, margin: 0 }}>
+                      <li>Swing</li>
+                      <li>Table</li>
+                      <li>Music Sheet</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <div style={{ fontWeight: 600, marginBottom: 4 }}>Spirits</div>
+                    <ul style={{ paddingLeft: 16, margin: 0 }}>
+                      <li>Lightseekers</li>
+                      <li>Manta Whisperer</li>
+                    </ul>
+                  </div>
                 </div>
-                <div>
-                  <div style={{ fontWeight: 600, marginBottom: 4 }}>Props</div>
-                  <ul style={{ paddingLeft: 16, margin: 0 }}>
-                    <li>Swing</li>
-                    <li>Table</li>
-                    <li>Music Sheet</li>
-                  </ul>
+              </InfoCard>
+              <InfoCard title="Motto">
+                <div style={{
+                  background: "rgba(250,204,21,0.08)",
+                  borderLeft: "4px solid #facc15",
+                  padding: "1em 1.3em",
+                  fontStyle: "italic",
+                  fontWeight: 500,
+                  color: "#ffe066"
+                }}>
+                  &quot;Fly high, shine bright, and light up every darkness.&quot;
                 </div>
+              </InfoCard>
+              <InfoCard title="Journey">
                 <div>
-                  <div style={{ fontWeight: 600, marginBottom: 4 }}>Spirits</div>
-                  <ul style={{ paddingLeft: 16, margin: 0 }}>
-                    <li>Lightseekers</li>
-                    <li>Manta Whisperer</li>
-                  </ul>
+                  <div><span style={{ fontWeight: 600 }}>Started Playing:</span> February 2021</div>
+                  <div><span style={{ fontWeight: 600 }}>Total Playtime:</span> 750+ hours</div>
                 </div>
-              </div>
-            </InfoCard>
-            {/* DIVIDER */}
+              </InfoCard>
+            </div>
             <hr className={styles.sectionDivider} />
-            {/* MOTTO */}
-            <InfoCard title="Motto">
-              <div style={{
-                background: "rgba(250,204,21,0.08)",
-                borderLeft: "4px solid #facc15",
-                padding: "1em 1.3em",
-                fontStyle: "italic",
-                fontWeight: 500,
-                color: "#ffe066"
-              }}>
-                &quot;Fly high, shine bright, and light up every darkness.&quot;
-              </div>
-            </InfoCard>
-            {/* JOURNEY */}
-            <InfoCard title="Journey">
-              <div>
-                <div><span style={{ fontWeight: 600 }}>Started Playing:</span> February 2021</div>
-                <div><span style={{ fontWeight: 600 }}>Total Playtime:</span> 750+ hours</div>
-              </div>
-            </InfoCard>
-            {/* BEST FRIENDS */}
-            <InfoCard title="Best Friends">
-              <ul style={{ listStyle: "disc", paddingLeft: 18, margin: 0 }}>
-                <li>CloudRunner</li>
-                <li>StarWhisper</li>
-                <li>MothKing</li>
-              </ul>
-            </InfoCard>
-            {/* Filler agar grid rata */}
-            <div className={styles.invisibleCard}></div>
-          </div>
+
+            {/* Section 3: 1 card (Best Friends) */}
+            <div className={styles.contentGrid}>
+              <InfoCard title="Best Friends">
+                <ul style={{ listStyle: "disc", paddingLeft: 18, margin: 0 }}>
+                  <li>CloudRunner</li>
+                  <li>StarWhisper</li>
+                  <li>MothKing</li>
+                </ul>
+              </InfoCard>
+            </div>
+          </>
         )}
 
         {activeTab === 'friend_code' && (

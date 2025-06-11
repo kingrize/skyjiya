@@ -26,13 +26,26 @@
 }
 
 .card {
-  /* Menerapkan efek kaca yang sama dengan InfoCard */
-  background: var(--color-panel-bg);
-  backdrop-filter: blur(15px);
-  border: 1px solid var(--color-panel-border);
-  border-radius: 16px;
-  overflow: hidden; /* Penting agar gambar tidak keluar dari sudut rounded */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(34, 38, 56, 0.54);
+  border-radius: 1.3rem;
+  box-shadow: 0 6px 24px 0 rgba(8,12,32,0.16);
+  border: 1.6px solid rgba(250,204,21,0.13);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  padding: 2rem 2.2rem;
+  color: #e6edf3;
+  transition:
+    transform 0.23s cubic-bezier(.4,2,.5,1),
+    box-shadow 0.23s,
+    border 0.18s,
+    filter 0.22s;
+  margin-bottom: 0.7rem;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .card:hover {
