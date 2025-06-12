@@ -187,17 +187,21 @@
   opacity: 1;
 }
 .tabContent {
-  margin-top: 1.3rem;
+  padding: 0 0.7rem;
   width: 100%;
+  box-sizing: border-box;
 }
-
 /* ==== GRID CARD ==== */
 .contentGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.4rem;
+  gap: 1.3rem;
   align-items: stretch;
   width: 100%;
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+  z-index: 0;
 }
 @media (max-width: 1050px) {
   .contentGrid { grid-template-columns: 1fr; }
@@ -212,16 +216,29 @@
 
 /* ==== CARD MODERN ==== */
 .card {
-  background: rgba(28, 32, 42, 0.86);
-  border-radius: 1.08rem;
-  border: 1.5px solid rgba(250,204,21,0.07);
-  box-shadow: 0 4px 14px 0 rgba(34,34,68,0.13);
-  padding: 1.15rem 1.35rem;
-  margin-bottom: 0.7rem;
+  background: rgba(30, 34, 48, 0.93);
+  border-radius: 1.02rem;
+  border: 1.5px solid rgba(250,204,21,0.08);
+  box-shadow: 0 4px 18px 0 rgba(24,24,44,0.10);
+  padding: 1.19rem 1.25rem;
   min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  position: relative;
+  transition:
+    transform 0.23s cubic-bezier(.4,2,.5,1),
+    box-shadow 0.22s,
+    border 0.22s,
+    filter 0.22s;
+  z-index: 1;
+}
+.card:hover {
+  transform: translateY(-4px) scale(1.022);
+  border: 2px solid #ffe066;
+  box-shadow: 0 10px 32px 0 rgba(250,204,21,0.13), 0 2px 6px 0 rgba(36,42,52,0.15);
+  filter: brightness(1.03);
+  z-index: 2;
 }
 .card h3 {
   color: #ffe066;
