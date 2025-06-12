@@ -36,11 +36,9 @@
 }
 
 /* Mobile menu */
-@media (max-width: 900px) {
-  .navLinks {
-    display: none;
-  }
-  .hamburger {
-    display: block;
-  }
+.navLinks {
+  display: none;
+}
+.hamburger {
+  display: block;
 }

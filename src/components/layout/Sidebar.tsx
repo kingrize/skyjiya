@@ -1,43 +1,31 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { FaUser, FaImages } from "react-icons/fa";
 import styles from "./Sidebar.module.css";
 
-const navLinks = [
-  { name: "Profile", href: "/" },
-  { name: "Gallery", href: "/gallery" },
-];
-
-export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
-  const pathname = usePathname();
-
+export default function Sidebar({ isOpen = false, onClose }: { isOpen?: boolean; onClose?: () => void }) {
+  // Close overlay & drawer hanya di mobile
   return (
     <>
-      <aside className={`${styles.sidebar} ${isOpen ? styles.isOpen : ""}`}>
-        <div className={styles.header}>
-          <span className={styles.logo}>🌟 SkyJiya</span>
-          <button className={styles.closeBtn} onClick={onClose} aria-label="Close sidebar">
-            &times;
-          </button>
+      {/* Overlay hanya muncul di mobile drawer */}
+      <div
+        className={`${styles.overlay} ${isOpen ? styles.active : ""}`}
+        onClick={onClose}
+      />
+      <aside className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}>
+        <div className={styles.logoBar}>
+          <span className={styles.logo}>🌟</span>
+          <span className={styles.brand}>SKYJIYA</span>
         </div>
-        <nav>
-          <ul className={styles.navList}>
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <Link
-                  href={link.href}
-                  className={pathname === link.href ? styles.active : styles.link}
-                  onClick={onClose}
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <nav className={styles.menu}>
+          <Link href="/" className={styles.menuItem} onClick={onClose}>
+            <FaUser className={styles.menuIcon} /> Profile
+          </Link>
+          <Link href="/gallery" className={styles.menuItem} onClick={onClose}>
+            <FaImages className={styles.menuIcon} /> Gallery
+          </Link>
         </nav>
       </aside>
-      {/* Overlay saat sidebar terbuka di mobile */}
-      {isOpen && <div className={styles.overlay} onClick={onClose}></div>}
     </>
   );
 }
