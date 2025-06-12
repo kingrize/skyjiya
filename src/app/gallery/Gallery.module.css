@@ -1,81 +1,85 @@
-/* src/app/gallery/Gallery.module.css (Redesign "Starry Night") */
-.container {
-  width: 100%;
+.galleryWrapper {
+  padding: 2.5rem 2rem 3rem 2rem;
+  min-height: 100vh;
+  background: var(--color-bg, #111320);
+  box-sizing: border-box;
 }
-
-.title {
-  font-family: var(--font-heading);
-  font-size: 3rem;
-  color: var(--color-text);
-  margin-bottom: 0.5rem;
+.galleryTitle {
+  color: #ffe066;
+  font-size: 2.2rem;
+  font-family: var(--font-heading, serif);
+  font-weight: 800;
+  margin-bottom: 2.4rem;
+  letter-spacing: 0.03em;
   text-align: center;
 }
-
-.subtitle {
-  color: var(--color-text-muted);
-  font-size: 1.1rem;
-  margin: 0 auto 3rem auto;
-  max-width: 500px;
-  text-align: center;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2rem;
-}
-
-.card {
-  background: rgba(34, 38, 56, 0.54);
-  border-radius: 1.3rem;
-  box-shadow: 0 6px 24px 0 rgba(8,12,32,0.16);
-  border: 1.6px solid rgba(250,204,21,0.13);
-  backdrop-filter: blur(9px);
-  -webkit-backdrop-filter: blur(9px);
-  padding: 2rem 2.2rem;
-  color: #e6edf3;
-  transition:
-    transform 0.23s cubic-bezier(.4,2,.5,1),
-    box-shadow 0.23s,
-    border 0.18s,
-    filter 0.22s;
-  margin-bottom: 0.7rem;
-  position: relative;
-  overflow: hidden;
-  height: 100%;
+.masonryGrid {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  margin-left: -1.2rem; /* gutter size offset */
+  width: auto;
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+.masonryColumn {
+  padding-left: 1.2rem; /* gutter size */
+  background-clip: padding-box;
 }
-
-.imageContainer {
-  width: 100%;
-  aspect-ratio: 16 / 9; /* Menjaga rasio gambar */
+.masonryColumn .galleryCard {
+  margin-bottom: 1.7rem;
+}
+.galleryGrid {
+  column-count: 3;
+  column-gap: 1.7rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.galleryCard {
+  background: rgba(30, 34, 48, 0.97);
+  border-radius: 1.1rem;
+  box-shadow: 0 3px 14px #19192828;
+  overflow: hidden;
+  transition: transform 0.21s cubic-bezier(.4,2,.5,1), box-shadow 0.23s;
   position: relative;
+  cursor: pointer;
 }
-
+.galleryCard:hover,
+.galleryCard:focus-within {
+  transform: scale(1.035) translateY(-8px) rotate(-0.5deg);
+  box-shadow: 0 14px 32px 0 #ffe06666, 0 2px 8px #19192819;
+  z-index: 2;
+}
+.galleryCard .hoverIcon {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%) scale(0.8);
+  opacity: 0;
+  pointer-events: none;
+  color: #ffe066;
+  font-size: 2.4rem;
+  text-shadow: 0 3px 12px #181a2b, 0 1px 0 #fff8;
+  transition: opacity 0.18s, transform 0.18s;
+}
+.galleryCard:hover .hoverIcon,
+.galleryCard:focus-within .hoverIcon {
+  opacity: 1;
+  transform: translate(-50%,-50%) scale(1.09);
+}
+.imageWrapper {
+  width: 100%;
+  position: relative;
+  background: #1a1a2a;
+}
 .image {
-  object-fit: cover; /* Memastikan gambar mengisi kontainer tanpa distorsi */
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 1.1rem;
 }
 
-.cardContent {
-  padding: 1rem 1.25rem;
-}
-
-.cardTitle {
-  margin: 0 0 0.5rem 0;
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  color: var(--color-text);
-}
-
-.cardDescription {
-  margin: 0;
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
+@media (max-width: 900px) {
+  .galleryWrapper { padding: 1.5rem 0.6rem 2rem 0.6rem; }
+  .masonryGrid { margin-left: -0.6rem; }
+  .masonryColumn { padding-left: 0.6rem; }
+  .galleryCard { border-radius: 1rem; }
+  .masonryColumn .galleryCard { margin-bottom: 1.1rem; }
 }

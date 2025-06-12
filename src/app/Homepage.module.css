@@ -94,10 +94,12 @@
   width: 100%;
   margin-top: 0.55rem;
   background: rgba(22, 27, 39, 0.82);
-  border-radius: 1.1rem;
-  padding: 1.1rem 1.6rem 1.2rem 1.6rem;
-  box-shadow: 0 3px 18px #21254a18;
+  /* border-radius: 1.1rem; (hapus/baris lama) */
+  border-radius: 2.7rem 1.5rem 2.7rem 1.5rem; /* Lebih bulat & asimetris */
+  box-shadow: 0 8px 24px #21254a22;
   backdrop-filter: blur(4px);
+  padding: 1.2rem 2.2rem 1.4rem 2.2rem;
+  transition: border-radius 0.3s;
 }
 .profileText {
   display: flex;
@@ -299,7 +301,9 @@
   .coverWrapper { height: 130px; }
   .avatarWrapper { width: 64px; height: 64px; min-width: 64px; border-width: 3px;}
   .profileHeader { margin-top: -36px; }
-  .profileMain { padding: 0.7rem 0.8rem; }
+  .profileMain {
+    border-radius: 1.3rem;
+    padding: 0.7rem 1rem; }
   .name { font-size: 1.11rem; }
   .status { font-size: 0.91rem; }
 }
