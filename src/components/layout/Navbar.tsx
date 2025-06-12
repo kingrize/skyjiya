@@ -1,18 +1,36 @@
-// src/components/layout/Navbar.tsx
+"use client";
 import Link from 'next/link';
+import { useState } from 'react';
 import styles from './Navbar.module.css';
-import ThemeToggle from '../ui/ThemeToggle'; // <-- 1. Impor komponen baru
+import Sidebar from './Sidebar'; // Pastikan import Sidebar benar
+import ThemeToggle from '../ui/ThemeToggle';
 
-const Navbar = () => {
+export default function Navbar() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   return (
-    <nav className={styles.navbar}>
-      <Link href="/" className={styles.brand}>SkyJiya</Link>
-      <div className={styles.navLinks}>
-        <Link href="/">Profile</Link>
-        <Link href="/gallery">Gallery</Link>
-        <ThemeToggle /> {/* <-- 2. Tambahkan tombol di sini */}
-      </div>
-    </nav>
+    <>
+      <nav className={styles.navbar}>
+        <div className={styles.left}>
+          <Link href="/" className={styles.brand}>SkyJiya</Link>
+        </div>
+        <div className={styles.navLinks}>
+          <Link href="/">Profile</Link>
+          <Link href="/gallery">Gallery</Link>
+          <ThemeToggle />
+        </div>
+        <button
+          className={`${styles.hamburger} ${sidebarOpen ? styles.open : ''}`}
+          onClick={() => setSidebarOpen((v) => !v)}
+          aria-label={sidebarOpen ? "Close menu" : "Open menu"}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+      {/* Sidebar Slide-in */}
+      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+    </>
   );
-};
-export default Navbar;
+}
