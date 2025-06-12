@@ -61,11 +61,11 @@ export default function HomePage() {
             <p className={styles.status}>{profileData.playstyle}</p>
           </div>
           <div className={styles.headerActions}>
-            <button className={`${styles.button} ${styles.primary}`}>
-              <MessageIcon /> Message
+            <button className={`${styles.button} ${styles.primary}`}  aria-label="Message">
+              <MessageIcon />
             </button>
-            <button className={styles.button}>
-              <AddFriendIcon /> Add Friend
+            <button className={styles.button} aria-label="Add Friend">
+              <AddFriendIcon />
             </button>
           </div>
         </div>
